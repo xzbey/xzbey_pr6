@@ -1,0 +1,19 @@
+# Игнорировать временные файлы Qt
+*.user
+*.pro.user
+*.pro.user.*
+*.qmlc
+*.moc
+*.qrc
+*.rcc
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.dll
+*.exe
+*.swp
+*.swo
+*.lck
+build-*/
