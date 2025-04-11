@@ -17,11 +17,101 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>220</y>
-      <width>256</width>
-      <height>192</height>
+      <x>30</x>
+      <y>40</y>
+      <width>721</width>
+      <height>421</height>
      </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>rarity</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>type</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>durability</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>weight</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>attack</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>defense</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="pB_add">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>470</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>add</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_del">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>470</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>del</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_change">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>470</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>change</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sB_del">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>500</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100000</number>
     </property>
    </widget>
   </widget>

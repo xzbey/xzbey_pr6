@@ -1,12 +1,12 @@
 #include "inventorymanager.h"
 
-void InventoryManager::addItem(std::unique_ptr<GameItem>) {
-
+void InventoryManager::addItem(std::unique_ptr<GameItem> item) {
+    items.push_back(std::move(item));
 }
 
 
 void InventoryManager::removeItem(int index) {
-
+    items.erase(items.cbegin() + index);
 }
 
 
@@ -15,30 +15,40 @@ void InventoryManager::editItem(int index, QString type_name, T new_parametr) {
     if (index < 0 or index >= items.size())
         return;
 
-    switch (type_name) {
-    case "name":
+
+    if (type_name == "name")
         items[index]->setName(new_parametr);
-        break;
-    case "type":
+
+    else if (type_name == "type")
         items[index]->setType(new_parametr);
-        break;
-    case "rarity":
+
+    else if (type_name == "rarity")
         items[index]->setRarity(new_parametr);
-        break;
-    case "durability":
+
+    else if (type_name == "durability")
         items[index]->setDurability(new_parametr);
-        break;
-    case "weight":
+
+    else if (type_name == "weight")
         items[index]->setWeight(new_parametr);
-        break;
-    case "damage":
-        items[index]->setDamage(new_parametr);
-        break;
-    case "defense":
-        items[index]->setDefense(new_parametr);
-        break;
-    default:
-        break;
+
+    else if (type_name == "damage") {
+        if (Weapon *weapon = dynamic_cast<Weapon*>(items[index].get()))
+            weapon->setDamage(new_parametr);
     }
 
+    else if (type_name == "defense") {
+        if (Armor* armor = dynamic_cast<Armor*>(items[index].get()))
+            armor->setDefense(new_parametr);
+    }
+
+}
+
+
+int InventoryManager::getSize() {
+    return items.size();
+}
+
+
+GameItem* InventoryManager::getItem(int index) {
+    return items[index].get();
 }

@@ -2,6 +2,7 @@
 #define GAMEITEM_H
 
 #include <QString>
+#include <QDebug>
 
 class GameItem {
 private:
@@ -11,9 +12,10 @@ public:
     explicit GameItem(): name("item"), rarity("common"), type("-"), durability(0), weight(0) {}
 
     explicit GameItem(QString name, QString rarity, QString type, int durability, int weight):
-        name(name), rarity(rarity), type(type), durability(durability), weight(weight) {}
+        name(name), rarity(rarity), type(type), durability(durability), weight(weight) {
+    qDebug() << "gameitem " + name + " created"; }
 
-    virtual ~GameItem() = 0;
+    virtual ~GameItem() {}
 
 
     QString getName() const;
@@ -38,6 +40,7 @@ public:
     void setWeight(int weight);
 };
 
+//inline GameItem::~GameItem() {}
 
 class Weapon: public GameItem {
 private:
@@ -46,7 +49,9 @@ public:
     explicit Weapon(): GameItem(), damage(0) {}
 
     explicit Weapon(QString name, QString rarity, QString type, int durability, int weight, int damage):
-        GameItem(name, rarity, type, durability, weight), damage(damage) {}
+        GameItem(name, rarity, type, durability, weight), damage(damage) {
+        qDebug() << "this been weapon";
+    }
 
     int getDamage() const;
 
@@ -61,7 +66,9 @@ public:
     explicit Armor(): GameItem(), defense(0) {}
 
     explicit Armor(QString name, QString rarity, QString type, int durability, int weight, int defense):
-        GameItem(name, rarity, type, durability, weight), defense(defense) {}
+        GameItem(name, rarity, type, durability, weight), defense(defense) {
+        qDebug() << "this been armor";
+    }
 
     int getDefense() const;
 

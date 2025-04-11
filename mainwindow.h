@@ -18,7 +18,18 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pB_add_clicked();
+
+    void on_pB_del_clicked();
+
 private:
+    InventoryManager inventory;
+
+
     Ui::MainWindow *ui;
+
+
+    void place_element(GameItem* item);
 };
 #endif // MAINWINDOW_H

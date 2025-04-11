@@ -2,20 +2,22 @@
 #define INVENTORYMANAGER_H
 
 #include "gameitem.h"
-#include <QVector>
+
 
 class InventoryManager {
 private:
-    QVector<std::unique_ptr<GameItem>> items;
+    std::vector<std::unique_ptr<GameItem>> items;
 public:
-    void addItem(std::unique_ptr<GameItem>);
+    void addItem(std::unique_ptr<GameItem> item);
 
     void removeItem(int index);
 
     template <typename T>
     void editItem(int index, QString type_name, T new_parametr);
 
+    GameItem* getItem(int index);
 
+    int getSize();
 
 };
 
