@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "itemeditordialog.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -45,18 +47,23 @@ void MainWindow::place_element(GameItem* item) {
 
 void MainWindow::on_pB_add_clicked()
 {
-    inventory.addItem(std::make_unique<Weapon>("Sword", "rare", "melee", 100, 5, 50));
+    // inventory.addItem(std::make_unique<Weapon>("Sword", "rare", "melee", 100, 5, 50));
 
-    place_element(inventory.getItem(inventory.getSize() - 1));
+    // place_element(inventory.getItem(inventory.getSize() - 1));
 
-    inventory.addItem(std::make_unique<Armor>("Shield", "common", "protection", 200, 10, 30));
+    // inventory.addItem(std::make_unique<Armor>("Shield", "common", "protection", 200, 10, 30));
 
-    //qDebug() << inventory.getItem(0)->getName(), inventory.getItem(0)->getWeight();
+    // //qDebug() << inventory.getItem(0)->getName(), inventory.getItem(0)->getWeight();
 
-    place_element(inventory.getItem(inventory.getSize() - 1));
+    // place_element(inventory.getItem(inventory.getSize() - 1));
 
-    inventory.addItem(std::make_unique<GameItem>("Potion", "uncommon", "consumable", 1, 1));
-    place_element(inventory.getItem(inventory.getSize() - 1));
+    // inventory.addItem(std::make_unique<GameItem>("Potion", "uncommon", "consumable", 1, 1));
+    // place_element(inventory.getItem(inventory.getSize() - 1));
+
+    ItemEditorDialog dialog(this);
+    if (dialog.exec() == QDialog::Accepted) {
+
+    }
 
 
 }
@@ -74,5 +81,11 @@ void MainWindow::on_pB_del_clicked()
     inventory.removeItem(index);
 
     ui->tableWidget->removeRow(index);
+}
+
+
+void MainWindow::on_pB_change_clicked()
+{
+
 }
 

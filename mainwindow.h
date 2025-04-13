@@ -23,9 +23,10 @@ private slots:
 
     void on_pB_del_clicked();
 
+    void on_pB_change_clicked();
+
 private:
     InventoryManager inventory;
-
 
     Ui::MainWindow *ui;
 

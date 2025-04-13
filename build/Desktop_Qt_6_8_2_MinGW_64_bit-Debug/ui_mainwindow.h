@@ -31,6 +31,7 @@ public:
     QPushButton *pB_del;
     QPushButton *pB_change;
     QSpinBox *sB_del;
+    QSpinBox *sB_change;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,6 +40,11 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(800, 600);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+        MainWindow->setSizePolicy(sizePolicy);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         tableWidget = new QTableWidget(centralwidget);
@@ -74,6 +80,11 @@ public:
         sB_del->setGeometry(QRect(310, 500, 91, 21));
         sB_del->setMinimum(1);
         sB_del->setMaximum(100000);
+        sB_change = new QSpinBox(centralwidget);
+        sB_change->setObjectName("sB_change");
+        sB_change->setGeometry(QRect(510, 500, 91, 21));
+        sB_change->setMinimum(1);
+        sB_change->setMaximum(100000);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -107,7 +118,7 @@ public:
         ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "defense", nullptr));
         pB_add->setText(QCoreApplication::translate("MainWindow", "add", nullptr));
         pB_del->setText(QCoreApplication::translate("MainWindow", "del", nullptr));
-        pB_change->setText(QCoreApplication::translate("MainWindow", "add", nullptr));
+        pB_change->setText(QCoreApplication::translate("MainWindow", "change", nullptr));
     } // retranslateUi
 
 };

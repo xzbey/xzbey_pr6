@@ -24,6 +24,7 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
+    itemeditordialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

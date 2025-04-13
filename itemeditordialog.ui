@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ItemEditorDialog</class>
+ <widget class="QDialog" name="ItemEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>538</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>480</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_name">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>78</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>name</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_rarity">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>78</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>rarity</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_type">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>78</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>type</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_durability">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>280</y>
+     <width>78</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>durability</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_weight">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>320</y>
+     <width>78</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>weight</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_attack">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>360</y>
+     <width>78</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>attack</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_defense">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>400</y>
+     <width>78</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>defense</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lE_name">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>20</y>
+     <width>113</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cB_rarity">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>60</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Common</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Uncommon</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rare</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Epic</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Legendary</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mythic</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QSpinBox" name="sB_durability">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>280</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sB_weight">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>320</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sB_attack">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>360</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sB_defense">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>400</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_type">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>100</y>
+     <width>120</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>type</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+   </property>
+   <widget class="QRadioButton" name="rB_otherType">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>other</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rB_accessoriesType">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>accessories</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rB_armorType">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>armor</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rB_weaponType">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>weapon</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QComboBox" name="cB_weapon">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>110</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Sword</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Axe</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bow</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Staff</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dagger</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Hammer</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="cB_armor">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>150</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Helmet</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Chestplate</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Leggings</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Boots</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Gauntlets</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Shield</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="cB_accessories">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>190</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Ring</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Amulet</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bracelet</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Cloak</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="cB_other">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>230</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Potion</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Scroll</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Food</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Key</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Tool</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Material</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Health Kit</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ItemEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
