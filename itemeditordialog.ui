@@ -252,7 +252,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>type</string>
+    <string>Type</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -267,7 +267,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>other</string>
+     <string>Other</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="rB_accessoriesType">
@@ -280,7 +280,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>accessories</string>
+     <string>Accessories</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="rB_armorType">
@@ -293,7 +293,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>armor</string>
+     <string>Armor</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="rB_weaponType">
@@ -306,7 +306,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>weapon</string>
+     <string>Weapon</string>
     </property>
    </widget>
   </widget>

@@ -69,6 +69,20 @@ QString ItemEditorDialog::getRarity() const{
     return ui->cB_rarity->currentText();
 }
 
+QString ItemEditorDialog::getCategory() const {
+    if (ui->rB_weaponType->isChecked())
+        return "Weapon";
+
+    else if (ui->rB_armorType->isChecked())
+        return "Armor";
+
+    else if (ui->rB_accessoriesType->isChecked())
+        return "Accessories";
+
+    else
+        return "Other";
+}
+
 QString ItemEditorDialog::getType() const {
     if (ui->rB_weaponType->isChecked())
         return ui->cB_weapon->currentText();
@@ -82,7 +96,7 @@ QString ItemEditorDialog::getType() const {
     else if (ui->rB_otherType->isChecked())
         return ui->cB_other->currentText();
 
-    return "";
+    return "nothing";
 }
 
 int ItemEditorDialog::getDurability() const {
@@ -113,6 +127,23 @@ void ItemEditorDialog::setRarity(QString rarity) {
         ui->cB_rarity->setCurrentText(rarity);
     else
         ui->checkBox_rarity->setChecked(0);
+}
+
+void ItemEditorDialog::setCategory(QString category) {
+    if (category == "Weapon")
+        ui->rB_weaponType->setChecked(1);
+
+    else if (category == "Armor")
+        ui->rB_armorType->setChecked(1);
+
+    else if (category == "Accessories")
+        ui->rB_accessoriesType->setChecked(1);
+
+    else
+        ui->rB_otherType->setChecked(1);
+
+    updateComboBoxes();
+    updateFields();
 }
 
 void ItemEditorDialog::setType(QString type) {
@@ -158,17 +189,6 @@ void ItemEditorDialog::setAttack(int attack) {
 void ItemEditorDialog::setDefense(int defense) {
     ui->sB_defense->setValue(defense > 0 ? defense: 1);
     ui->checkBox_defense->setChecked(defense > 0);
-}
-
-void ItemEditorDialog::setItemType(QString type) {
-    if (type == "Weapon")
-        ui->rB_weaponType->setChecked(1);
-    else if (type == "Armor")
-        ui->rB_armorType->setChecked(1);
-    else
-        ui->rB_otherType->setChecked(1);
-    updateComboBoxes();
-    updateFields();
 }
 
 //------------------------------------------

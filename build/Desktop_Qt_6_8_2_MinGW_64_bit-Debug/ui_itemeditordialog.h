@@ -195,11 +195,11 @@ public:
         cB_rarity->setItemText(4, QCoreApplication::translate("ItemEditorDialog", "Legendary", nullptr));
         cB_rarity->setItemText(5, QCoreApplication::translate("ItemEditorDialog", "Mythic", nullptr));
 
-        groupBox_type->setTitle(QCoreApplication::translate("ItemEditorDialog", "type", nullptr));
-        rB_otherType->setText(QCoreApplication::translate("ItemEditorDialog", "other", nullptr));
-        rB_accessoriesType->setText(QCoreApplication::translate("ItemEditorDialog", "accessories", nullptr));
-        rB_armorType->setText(QCoreApplication::translate("ItemEditorDialog", "armor", nullptr));
-        rB_weaponType->setText(QCoreApplication::translate("ItemEditorDialog", "weapon", nullptr));
+        groupBox_type->setTitle(QCoreApplication::translate("ItemEditorDialog", "Type", nullptr));
+        rB_otherType->setText(QCoreApplication::translate("ItemEditorDialog", "Other", nullptr));
+        rB_accessoriesType->setText(QCoreApplication::translate("ItemEditorDialog", "Accessories", nullptr));
+        rB_armorType->setText(QCoreApplication::translate("ItemEditorDialog", "Armor", nullptr));
+        rB_weaponType->setText(QCoreApplication::translate("ItemEditorDialog", "Weapon", nullptr));
         cB_weapon->setItemText(0, QCoreApplication::translate("ItemEditorDialog", "Sword", nullptr));
         cB_weapon->setItemText(1, QCoreApplication::translate("ItemEditorDialog", "Axe", nullptr));
         cB_weapon->setItemText(2, QCoreApplication::translate("ItemEditorDialog", "Bow", nullptr));

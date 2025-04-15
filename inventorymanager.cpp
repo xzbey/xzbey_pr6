@@ -2,6 +2,7 @@
 
 void InventoryManager::addItem(std::unique_ptr<GameItem> item) {
     items.push_back(std::move(item));
+    qDebug() << "item " << typeid(item).name() << " add";
 }
 
 

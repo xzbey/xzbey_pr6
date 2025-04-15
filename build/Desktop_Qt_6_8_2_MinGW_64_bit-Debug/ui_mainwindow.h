@@ -39,7 +39,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(812, 600);
         QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -48,8 +48,8 @@ public:
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         tableWidget = new QTableWidget(centralwidget);
-        if (tableWidget->columnCount() < 7)
-            tableWidget->setColumnCount(7);
+        if (tableWidget->columnCount() < 8)
+            tableWidget->setColumnCount(8);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -64,31 +64,33 @@ public:
         tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem7);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(30, 40, 721, 421));
+        tableWidget->setGeometry(QRect(0, 30, 811, 421));
         pB_add = new QPushButton(centralwidget);
         pB_add->setObjectName("pB_add");
-        pB_add->setGeometry(QRect(90, 470, 80, 24));
+        pB_add->setGeometry(QRect(140, 470, 80, 24));
         pB_del = new QPushButton(centralwidget);
         pB_del->setObjectName("pB_del");
-        pB_del->setGeometry(QRect(320, 470, 80, 24));
+        pB_del->setGeometry(QRect(359, 470, 91, 24));
         pB_change = new QPushButton(centralwidget);
         pB_change->setObjectName("pB_change");
-        pB_change->setGeometry(QRect(510, 470, 80, 24));
+        pB_change->setGeometry(QRect(590, 470, 91, 24));
         sB_del = new QSpinBox(centralwidget);
         sB_del->setObjectName("sB_del");
-        sB_del->setGeometry(QRect(310, 500, 91, 21));
+        sB_del->setGeometry(QRect(360, 500, 91, 21));
         sB_del->setMinimum(1);
         sB_del->setMaximum(100000);
         sB_change = new QSpinBox(centralwidget);
         sB_change->setObjectName("sB_change");
-        sB_change->setGeometry(QRect(510, 500, 91, 21));
+        sB_change->setGeometry(QRect(590, 500, 91, 21));
         sB_change->setMinimum(1);
         sB_change->setMaximum(100000);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 812, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -107,15 +109,17 @@ public:
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
         ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "rarity", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "type", nullptr));
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "category", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "durability", nullptr));
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "type", nullptr));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "weight", nullptr));
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "durability", nullptr));
         QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "attack", nullptr));
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "weight", nullptr));
         QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "defense", nullptr));
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "attack", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "defense", nullptr));
         pB_add->setText(QCoreApplication::translate("MainWindow", "add", nullptr));
         pB_del->setText(QCoreApplication::translate("MainWindow", "del", nullptr));
         pB_change->setText(QCoreApplication::translate("MainWindow", "change", nullptr));

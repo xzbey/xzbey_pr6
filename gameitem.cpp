@@ -4,16 +4,17 @@ QString GameItem::getName() const {
     return name;
 }
 
-
-QString GameItem::getType() const {
-    return type;
-}
-
-
 QString GameItem::getRarity() const {
     return rarity;
 }
 
+QString GameItem::getCategory() const {
+    return category;
+}
+
+QString GameItem::getType() const {
+    return type;
+}
 
 int GameItem::getDurability() const {
     return durability;
@@ -34,6 +35,7 @@ int Armor::getDefense() const {
     return defense;
 }
 
+//------------------------------------------
 
 void GameItem::setName(QString name) {
     this->name = name;
@@ -44,6 +46,9 @@ void GameItem::setRarity(QString rarity) {
     this->rarity = rarity;
 }
 
+void GameItem::setCategory(QString category) {
+    this->category = category;
+}
 
 void GameItem::setType(QString type){
     this->type = type;

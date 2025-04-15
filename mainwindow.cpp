@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "itemeditordialog.h"
+#include <QMessageBox>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -25,21 +26,22 @@ void MainWindow::place_element(GameItem* item) {
 
     ui->tableWidget->setItem(size, 0, new QTableWidgetItem(item->getName()));
     ui->tableWidget->setItem(size, 1, new QTableWidgetItem(item->getRarity()));
-    ui->tableWidget->setItem(size, 2, new QTableWidgetItem(item->getType()));
-    ui->tableWidget->setItem(size, 3, new QTableWidgetItem(QString::number(item->getDurability())));
-    ui->tableWidget->setItem(size, 4, new QTableWidgetItem(QString::number(item->getWeight())));
+    ui->tableWidget->setItem(size, 2, new QTableWidgetItem(item->getCategory()));
+    ui->tableWidget->setItem(size, 3, new QTableWidgetItem(item->getType()));
+    ui->tableWidget->setItem(size, 4, new QTableWidgetItem(QString::number(item->getDurability())));
+    ui->tableWidget->setItem(size, 5, new QTableWidgetItem(QString::number(item->getWeight())));
 
     if (Weapon* weapon = dynamic_cast<Weapon*>(item)) {
-        ui->tableWidget->setItem(size, 5, new QTableWidgetItem(QString::number(weapon->getDamage())));
-        ui->tableWidget->setItem(size, 6, new QTableWidgetItem("0"));
+        ui->tableWidget->setItem(size, 6, new QTableWidgetItem(QString::number(weapon->getDamage())));
+        ui->tableWidget->setItem(size, 7, new QTableWidgetItem("0"));
     }
 
     else if (Armor* armor = dynamic_cast<Armor*>(item)) {
-        ui->tableWidget->setItem(size, 6, new QTableWidgetItem(QString::number(armor->getDefense())));
-        ui->tableWidget->setItem(size, 5, new QTableWidgetItem("0"));
-    } else {
-        ui->tableWidget->setItem(size, 5, new QTableWidgetItem("0"));
+        ui->tableWidget->setItem(size, 7, new QTableWidgetItem(QString::number(armor->getDefense())));
         ui->tableWidget->setItem(size, 6, new QTableWidgetItem("0"));
+    } else {
+        ui->tableWidget->setItem(size, 6, new QTableWidgetItem("0"));
+        ui->tableWidget->setItem(size, 7, new QTableWidgetItem("0"));
     }
 
 }
@@ -62,6 +64,44 @@ void MainWindow::on_pB_add_clicked()
 
     ItemEditorDialog dialog(this);
     if (dialog.exec() == QDialog::Accepted) {
+        QString category = dialog.getCategory();
+        std::unique_ptr<GameItem> item;
+
+        if (category == "Weapon") {
+            item = std::make_unique<Weapon> (
+                dialog.getName(),
+                dialog.getRarity(),
+                dialog.getType(),
+                dialog.getDurability(),
+                dialog.getWeight(),
+                dialog.getAttack()
+            );
+        }
+
+        else if (category == "Armor") {
+            item = std::make_unique<Armor>(
+                dialog.getName(),
+                dialog.getRarity(),
+                dialog.getType(),
+                dialog.getDurability(),
+                dialog.getWeight(),
+                dialog.getDefense()
+            );
+        }
+
+        else {
+            item = std::make_unique<GameItem>(
+                dialog.getName(),
+                dialog.getRarity(),
+                category,
+                dialog.getType(),
+                dialog.getDurability(),
+                dialog.getWeight()
+            );
+        }
+
+        inventory.addItem(std::move(item));
+        place_element(inventory.getItem(inventory.getSize() - 1));
 
     }
 
@@ -75,11 +115,12 @@ void MainWindow::on_pB_del_clicked()
 {
     int index = ui->sB_del->value() - 1;
 
-    if (index >= inventory.getSize())
+    if (index >= inventory.getSize()) {
+        QMessageBox::warning(this, "Error", "Неверный индекс для удаления");
         return;
+    }
 
     inventory.removeItem(index);
-
     ui->tableWidget->removeRow(index);
 }
 

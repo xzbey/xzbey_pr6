@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>812</width>
     <height>600</height>
    </rect>
   </property>
@@ -23,9 +23,9 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>40</y>
-      <width>721</width>
+      <x>0</x>
+      <y>30</y>
+      <width>811</width>
       <height>421</height>
      </rect>
     </property>
@@ -37,6 +37,11 @@
     <column>
      <property name="text">
       <string>rarity</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>category</string>
      </property>
     </column>
     <column>
@@ -68,7 +73,7 @@
    <widget class="QPushButton" name="pB_add">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>140</x>
       <y>470</y>
       <width>80</width>
       <height>24</height>
@@ -81,9 +86,9 @@
    <widget class="QPushButton" name="pB_del">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>359</x>
       <y>470</y>
-      <width>80</width>
+      <width>91</width>
       <height>24</height>
      </rect>
     </property>
@@ -94,9 +99,9 @@
    <widget class="QPushButton" name="pB_change">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>590</x>
       <y>470</y>
-      <width>80</width>
+      <width>91</width>
       <height>24</height>
      </rect>
     </property>
@@ -107,7 +112,7 @@
    <widget class="QSpinBox" name="sB_del">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>360</x>
       <y>500</y>
       <width>91</width>
       <height>21</height>
@@ -123,7 +128,7 @@
    <widget class="QSpinBox" name="sB_change">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>590</x>
       <y>500</y>
       <width>91</width>
       <height>21</height>
@@ -142,7 +147,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>812</width>
      <height>21</height>
     </rect>
    </property>

@@ -19,6 +19,7 @@ public:
 
     QString getName() const;
     QString getRarity() const;
+    QString getCategory() const;
     QString getType() const;
     int getDurability() const;
     int getWeight() const;
@@ -27,6 +28,7 @@ public:
 
     void setName(QString name);
     void setRarity(QString rarity);
+    void setCategory(QString category);
     void setType(QString type);
     void setDurability(int durability);
     void setWeight(int weight);
@@ -40,8 +42,6 @@ public:
     bool isWeightChecked() const;
     bool isAttackChecked() const;
     bool isDefenseChecked() const;
-
-    void setItemType(QString itemType);
 
 private slots:
     void on_checkBox_name_toggled(bool checked);
