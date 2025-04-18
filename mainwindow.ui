@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>812</width>
-    <height>600</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -24,10 +24,13 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>30</y>
+      <y>0</y>
       <width>811</width>
       <height>421</height>
      </rect>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
     </property>
     <column>
      <property name="text">
@@ -73,8 +76,8 @@
    <widget class="QPushButton" name="pB_add">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>470</y>
+      <x>70</x>
+      <y>430</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -86,8 +89,8 @@
    <widget class="QPushButton" name="pB_del">
     <property name="geometry">
      <rect>
-      <x>359</x>
-      <y>470</y>
+      <x>260</x>
+      <y>430</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -99,8 +102,8 @@
    <widget class="QPushButton" name="pB_change">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>470</y>
+      <x>530</x>
+      <y>430</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -113,7 +116,7 @@
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>500</y>
+      <y>430</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -128,8 +131,8 @@
    <widget class="QSpinBox" name="sB_change">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>500</y>
+      <x>630</x>
+      <y>430</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -140,6 +143,218 @@
     <property name="maximum">
      <number>100000</number>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>470</y>
+      <width>211</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Сортировка</string>
+    </property>
+    <widget class="QRadioButton" name="rB_name">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>name</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rB_rarity">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>rarity</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rB_category">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>category</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rB_type">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>type</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rB_durability">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>20</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>durability</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rB_weight">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>40</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>weight</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rB_attack">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>60</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>attack</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rB_defense">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>80</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>defense</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rB_nothing">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>100</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>nothing</string>
+     </property>
+    </widget>
+    <zorder>rB_type</zorder>
+    <zorder>rB_name</zorder>
+    <zorder>rB_rarity</zorder>
+    <zorder>rB_category</zorder>
+    <zorder>rB_durability</zorder>
+    <zorder>rB_weight</zorder>
+    <zorder>rB_attack</zorder>
+    <zorder>rB_defense</zorder>
+    <zorder>rB_nothing</zorder>
+   </widget>
+   <widget class="QPushButton" name="pB_statistic">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>490</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Статистика</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cB_characteristics_type">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>490</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>durability</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>weight</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>attack</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>defense</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="cB_statistic_type">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>490</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Минимальное</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Максимальное</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Суммарное</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Среднее</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

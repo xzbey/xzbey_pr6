@@ -11,11 +11,9 @@ void InventoryManager::removeItem(int index) {
 }
 
 
-template <typename T>
-void InventoryManager::editItem(int index, QString type_name, T new_parametr) {
+void InventoryManager::editItem(int index, QString type_name, QString new_parametr) {
     if (index < 0 or index >= items.size())
         return;
-
 
     if (type_name == "name")
         items[index]->setName(new_parametr);
@@ -25,8 +23,13 @@ void InventoryManager::editItem(int index, QString type_name, T new_parametr) {
 
     else if (type_name == "rarity")
         items[index]->setRarity(new_parametr);
+}
 
-    else if (type_name == "durability")
+void InventoryManager::editItem(int index, QString type_name, int new_parametr) {
+    if (index < 0 or index >= items.size())
+        return;
+
+    if (type_name == "durability")
         items[index]->setDurability(new_parametr);
 
     else if (type_name == "weight")
@@ -52,4 +55,82 @@ int InventoryManager::getSize() {
 
 GameItem* InventoryManager::getItem(int index) {
     return items[index].get();
+}
+
+
+bool InventoryManager::sortByName(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
+    return item1->getName() < item2->getName();
+}
+
+bool InventoryManager::sortByRarity(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
+    return GameItem::RarityPriority[item1->getRarity()] < GameItem::RarityPriority[item2->getRarity()];
+}
+
+bool InventoryManager::sortByCategory(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
+    return item1->getCategory() < item2->getCategory();
+}
+
+bool InventoryManager::sortByType(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
+    return item1->getType() < item2->getType();
+}
+
+bool InventoryManager::sortByDurability(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
+    return item1->getDurability() < item2->getDurability();
+}
+
+bool InventoryManager::sortByWeight(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
+    return item1->getWeight() < item2->getWeight();
+}
+
+bool InventoryManager::sortByAttack(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
+    Weapon* weapon1 = dynamic_cast<Weapon*>(item1.get());
+    Weapon* weapon2 = dynamic_cast<Weapon*>(item2.get());
+
+    if (weapon1 and weapon2)
+        return weapon1->getDamage() < weapon2->getDamage();
+
+    return weapon2 != nullptr;
+}
+
+bool InventoryManager::sortByDefense(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
+    Armor* armor1 = dynamic_cast<Armor*>(item1.get());
+    Armor* armor2 = dynamic_cast<Armor*>(item2.get());
+
+    if (armor1 and armor2)
+        return armor1->getDefense() < armor2->getDefense();
+
+    return armor2 != nullptr;
+}
+
+
+void InventoryManager::sort(QString SORT_TYPE) {
+    bool (*func)(std::unique_ptr<GameItem>&, std::unique_ptr<GameItem>&) = nullptr;
+
+    if (SORT_TYPE == "name")
+        func = InventoryManager::sortByName;
+
+    else if (SORT_TYPE == "rarity")
+        func = InventoryManager::sortByRarity;
+
+    else if (SORT_TYPE == "category")
+        func = InventoryManager::sortByCategory;
+
+    else if (SORT_TYPE == "type")
+        func = InventoryManager::sortByType;
+
+    else if (SORT_TYPE == "durability")
+        func = InventoryManager::sortByDurability;
+
+    else if (SORT_TYPE == "weight")
+        func = InventoryManager::sortByWeight;
+
+    else if (SORT_TYPE == "attack")
+        func = InventoryManager::sortByAttack;
+
+    else if (SORT_TYPE == "defense")
+        func = InventoryManager::sortByDefense;
+
+    if (func and !items.empty())
+        std::sort(items.begin(), items.end(), func);
+
 }

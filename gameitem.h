@@ -32,6 +32,8 @@ public:
     void setType(QString type);
     void setDurability(int durability);
     void setWeight(int weight);
+
+    static const QMap<QString, int> RarityPriority;
 };
 
 //inline GameItem::~GameItem() {}

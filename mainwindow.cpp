@@ -47,21 +47,59 @@ void MainWindow::place_element(GameItem* item) {
 }
 
 
+void MainWindow::place_all() {
+    ui->tableWidget->setRowCount(0);
+
+    for (int i = 0; i < inventory.getSize(); i++)
+        place_element(inventory.getItem(i));
+}
+
+
+int MainWindow::sumStatistic(int index) {
+    int result = 0;
+
+    for (int i = 0; i < inventory.getSize(); i++)
+        result += ui->tableWidget->item(i, index)->text().toInt();
+
+    return result;
+}
+
+int MainWindow::minStatistic(int index) {
+    int result = 99999;
+
+    int num = 0; bool ok;
+    for (int i = 0; i < inventory.getSize(); i++) {
+        num = ui->tableWidget->item(i, index)->text().toInt(&ok);
+        if (!ok) num = result;
+        if (result > num)
+            result = num;
+    }
+
+    return result;
+
+}
+
+int MainWindow::maxStatistic(int index) {
+    int result = -1;
+
+    int num = 0; bool ok;
+    for (int i = 0; i < inventory.getSize(); i++) {
+        num = ui->tableWidget->item(i, index)->text().toInt(&ok);
+        if (!ok) num = result;
+        if (result < num)
+            result = num;
+    }
+
+    return result;
+}
+
+float MainWindow::midStatistic(int index) {
+    return static_cast<float>(sumStatistic(index)) / inventory.getSize();
+}
+
+
 void MainWindow::on_pB_add_clicked()
 {
-    // inventory.addItem(std::make_unique<Weapon>("Sword", "rare", "melee", 100, 5, 50));
-
-    // place_element(inventory.getItem(inventory.getSize() - 1));
-
-    // inventory.addItem(std::make_unique<Armor>("Shield", "common", "protection", 200, 10, 30));
-
-    // //qDebug() << inventory.getItem(0)->getName(), inventory.getItem(0)->getWeight();
-
-    // place_element(inventory.getItem(inventory.getSize() - 1));
-
-    // inventory.addItem(std::make_unique<GameItem>("Potion", "uncommon", "consumable", 1, 1));
-    // place_element(inventory.getItem(inventory.getSize() - 1));
-
     ItemEditorDialog dialog(this);
     if (dialog.exec() == QDialog::Accepted) {
         QString category = dialog.getCategory();
@@ -109,8 +147,6 @@ void MainWindow::on_pB_add_clicked()
 }
 
 
-
-
 void MainWindow::on_pB_del_clicked()
 {
     int index = ui->sB_del->value() - 1;
@@ -127,6 +163,158 @@ void MainWindow::on_pB_del_clicked()
 
 void MainWindow::on_pB_change_clicked()
 {
+    int index = ui->sB_change->value() - 1;
 
+    if (index >= inventory.getSize()) {
+        QMessageBox::warning(this, "Error", "Неверный индекс для удаления");
+        return;
+    }
+
+    ItemEditorDialog dialog(this);
+
+    GameItem* item = inventory.getItem(index);
+
+    dialog.setName(item->getName());
+    dialog.setRarity(item->getRarity());
+    dialog.setCategory(item->getCategory());
+    dialog.setType(item->getType());
+    dialog.setDurability(item->getDurability());
+    dialog.setWeight(item->getWeight());
+
+    if (Weapon* weapon = dynamic_cast<Weapon*>(item))
+        dialog.setAttack(weapon->getDamage());
+    else if (Armor* armor = dynamic_cast<Armor*>(item))
+        dialog.setAttack(armor->getDefense());
+
+
+    if (dialog.exec() == QDialog::Accepted) {
+        if (dialog.isNameChecked())
+            inventory.editItem(index, "name", dialog.getName());
+        if (dialog.isRarityChecked())
+            inventory.editItem(index, "rarity", dialog.getRarity());
+        if (dialog.isTypeChecked())
+            inventory.editItem(index, "type", dialog.getType());
+        if (dialog.isDurabilityChecked())
+            inventory.editItem(index, "durability", dialog.getDurability());
+        if (dialog.isWeightChecked())
+            inventory.editItem(index, "weight", dialog.getWeight());
+        if (dialog.isAttackChecked())
+            inventory.editItem(index, "damage", dialog.getAttack());
+        if (dialog.isDefenseChecked())
+            inventory.editItem(index, "defense", dialog.getDefense());
+
+        if (item->getCategory() != dialog.getCategory()) {
+            std::unique_ptr<GameItem> newitem;
+
+            QString category = dialog.getCategory();            
+
+            if (category == "Weapon") {
+                newitem = std::make_unique<Weapon>(
+                    dialog.getName(), dialog.getRarity(), dialog.getType(),
+                    dialog.getDurability(), dialog.getWeight(), dialog.getAttack());
+            } else if (category == "Armor") {
+                newitem = std::make_unique<Armor>(
+                    dialog.getName(), dialog.getRarity(), dialog.getType(),
+                    dialog.getDurability(), dialog.getWeight(), dialog.getDefense());
+            } else {
+                newitem = std::make_unique<GameItem>(
+                    dialog.getName(), dialog.getRarity(), dialog.getCategory(), dialog.getType(),
+                    dialog.getDurability(), dialog.getWeight());
+            }
+
+            inventory.removeItem(index);
+            inventory.addItem(std::move(newitem));
+
+            dialog.setAttack(0);
+            dialog.setDefense(0);
+        }
+        place_all();
+
+    }
 }
 
+
+void MainWindow::on_rB_name_clicked()
+{
+    inventory.sort("name");
+    place_all();
+}
+
+
+void MainWindow::on_rB_rarity_clicked()
+{
+    inventory.sort("rarity");
+    place_all();
+}
+
+
+void MainWindow::on_rB_category_clicked()
+{
+    inventory.sort("category");
+    place_all();
+}
+
+
+void MainWindow::on_rB_type_clicked()
+{
+    inventory.sort("type");
+    place_all();
+}
+
+
+void MainWindow::on_rB_durability_clicked()
+{
+    inventory.sort("durability");
+    place_all();
+}
+
+
+void MainWindow::on_rB_weight_clicked()
+{
+    inventory.sort("weight");
+    place_all();
+}
+
+
+void MainWindow::on_rB_attack_clicked()
+{
+    inventory.sort("attack");
+    place_all();
+}
+
+
+void MainWindow::on_rB_defense_clicked()
+{
+    inventory.sort("defense");
+    place_all();
+}
+
+
+void MainWindow::on_pB_statistic_clicked()
+{
+    if (inventory.getSize() <= 0)
+        return;
+
+    int index = ui->cB_characteristics_type->currentIndex() + 4;
+    QString result;
+
+    switch (ui->cB_statistic_type->currentIndex()) {
+    case 0:
+        result = "Минимальное число по данным характеристкиам " + QString::number(minStatistic(index));
+        break;
+    case 1:
+        result = "Максимальное число по данным характеристкиам " + QString::number(maxStatistic(index));
+        break;
+    case 2:
+        result = "Суммарное число по данным характеристкиам " + QString::number(sumStatistic(index));
+        break;
+    case 3:
+        result = "Среднее число по данным характеристкиам " + QString::number(midStatistic(index), 'f', 2);
+        break;
+    default:
+        result = "";
+        break;
+    }
+
+    QMessageBox::information(this, "Statistic", result);
+}
