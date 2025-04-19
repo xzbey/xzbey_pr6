@@ -48,6 +48,12 @@ public:
     QPushButton *pB_statistic;
     QComboBox *cB_characteristics_type;
     QComboBox *cB_statistic_type;
+    QPushButton *pB_open_searchdialog;
+    QPushButton *pB_clearHighlights;
+    QGroupBox *groupBox_2;
+    QRadioButton *rB_saveToFile;
+    QRadioButton *rB_loadFromFile;
+    QRadioButton *rB_changePath;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -107,6 +113,7 @@ public:
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(30, 470, 211, 131));
+        groupBox->setAlignment(Qt::AlignmentFlag::AlignCenter);
         rB_name = new QRadioButton(groupBox);
         rB_name->setObjectName("rB_name");
         rB_name->setGeometry(QRect(10, 20, 91, 22));
@@ -133,7 +140,7 @@ public:
         rB_defense->setGeometry(QRect(120, 80, 91, 22));
         rB_nothing = new QRadioButton(groupBox);
         rB_nothing->setObjectName("rB_nothing");
-        rB_nothing->setGeometry(QRect(60, 100, 91, 22));
+        rB_nothing->setGeometry(QRect(70, 100, 91, 22));
         rB_type->raise();
         rB_name->raise();
         rB_rarity->raise();
@@ -145,21 +152,43 @@ public:
         rB_nothing->raise();
         pB_statistic = new QPushButton(centralwidget);
         pB_statistic->setObjectName("pB_statistic");
-        pB_statistic->setGeometry(QRect(270, 490, 81, 41));
+        pB_statistic->setGeometry(QRect(500, 540, 81, 41));
         cB_characteristics_type = new QComboBox(centralwidget);
         cB_characteristics_type->addItem(QString());
         cB_characteristics_type->addItem(QString());
         cB_characteristics_type->addItem(QString());
         cB_characteristics_type->addItem(QString());
         cB_characteristics_type->setObjectName("cB_characteristics_type");
-        cB_characteristics_type->setGeometry(QRect(360, 490, 81, 41));
+        cB_characteristics_type->setGeometry(QRect(590, 540, 81, 41));
         cB_statistic_type = new QComboBox(centralwidget);
         cB_statistic_type->addItem(QString());
         cB_statistic_type->addItem(QString());
         cB_statistic_type->addItem(QString());
         cB_statistic_type->addItem(QString());
         cB_statistic_type->setObjectName("cB_statistic_type");
-        cB_statistic_type->setGeometry(QRect(450, 490, 81, 41));
+        cB_statistic_type->setGeometry(QRect(680, 540, 111, 41));
+        pB_open_searchdialog = new QPushButton(centralwidget);
+        pB_open_searchdialog->setObjectName("pB_open_searchdialog");
+        pB_open_searchdialog->setGeometry(QRect(310, 490, 111, 41));
+        pB_clearHighlights = new QPushButton(centralwidget);
+        pB_clearHighlights->setObjectName("pB_clearHighlights");
+        pB_clearHighlights->setGeometry(QRect(310, 540, 111, 41));
+        groupBox_2 = new QGroupBox(centralwidget);
+        groupBox_2->setObjectName("groupBox_2");
+        groupBox_2->setGeometry(QRect(500, 460, 281, 61));
+        groupBox_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        rB_saveToFile = new QRadioButton(groupBox_2);
+        rB_saveToFile->setObjectName("rB_saveToFile");
+        rB_saveToFile->setGeometry(QRect(10, 30, 91, 22));
+        rB_saveToFile->setAutoExclusive(false);
+        rB_loadFromFile = new QRadioButton(groupBox_2);
+        rB_loadFromFile->setObjectName("rB_loadFromFile");
+        rB_loadFromFile->setGeometry(QRect(110, 30, 51, 22));
+        rB_loadFromFile->setAutoExclusive(false);
+        rB_changePath = new QRadioButton(groupBox_2);
+        rB_changePath->setObjectName("rB_changePath");
+        rB_changePath->setGeometry(QRect(180, 30, 101, 22));
+        rB_changePath->setAutoExclusive(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -217,6 +246,12 @@ public:
         cB_statistic_type->setItemText(2, QCoreApplication::translate("MainWindow", "\320\241\321\203\320\274\320\274\320\260\321\200\320\275\320\276\320\265", nullptr));
         cB_statistic_type->setItemText(3, QCoreApplication::translate("MainWindow", "\320\241\321\200\320\265\320\264\320\275\320\265\320\265", nullptr));
 
+        pB_open_searchdialog->setText(QCoreApplication::translate("MainWindow", "open search dialog", nullptr));
+        pB_clearHighlights->setText(QCoreApplication::translate("MainWindow", "clear highlights", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\320\240\320\260\320\261\320\276\321\202\320\260 \321\201 \321\204\320\260\320\271\320\273\320\276\320\274", nullptr));
+        rB_saveToFile->setText(QCoreApplication::translate("MainWindow", "\321\201\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214", nullptr));
+        rB_loadFromFile->setText(QCoreApplication::translate("MainWindow", "\320\262\320\267\321\217\321\202\321\214", nullptr));
+        rB_changePath->setText(QCoreApplication::translate("MainWindow", "\320\262\321\213\320\261\321\200\320\260\321\202\321\214 \320\277\321\203\321\202\321\214", nullptr));
     } // retranslateUi
 
 };

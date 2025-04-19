@@ -14,20 +14,27 @@ SOURCES += \
     inventorymanager.cpp \
     itemeditordialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    searchdialog.cpp
 
 HEADERS += \
     filemanager.h \
     gameitem.h \
     inventorymanager.h \
     itemeditordialog.h \
-    mainwindow.h
+    mainwindow.h \
+    searchdialog.h
 
 FORMS += \
     itemeditordialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    searchdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
+
+RESOURCES +=

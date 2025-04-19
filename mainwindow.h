@@ -43,8 +43,22 @@ private slots:
 
     void on_pB_statistic_clicked();
 
+    void on_pB_open_searchdialog_clicked();
+
+    void on_pB_clearHighlights_clicked();
+
+    void on_rB_saveToFile_clicked();
+
+    void on_rB_loadFromFile_clicked();
+
+    void on_rB_changePath_clicked();
+
 private:
     InventoryManager inventory;
+
+    QString PATH;
+
+    bool isModified;
 
     Ui::MainWindow *ui;
 
@@ -55,6 +69,12 @@ private:
     int minStatistic(int index);
     int maxStatistic(int index);
     float midStatistic(int index);
+
+    void highlightResults(const std::vector<int>& indexes);
+    void clearHighlights();
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 
 };
 #endif // MAINWINDOW_H

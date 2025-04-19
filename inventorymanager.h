@@ -30,6 +30,12 @@ public:
     static bool sortByDefense(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2);
 
     void sort(QString SORT_TYPE);
+
+    std::vector<int> searchItems(
+        bool checkDurability, int minDurability, int maxDurablity,
+        bool checkWeight, int minWeight, int maxWeight,
+        bool checkAttack, int minAttack, int maxAttack,
+        bool checkDefense, int minDefenseMin, int maxDefense);
 };
 
 #endif // INVENTORYMANAGER_H

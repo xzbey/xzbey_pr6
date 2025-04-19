@@ -47,6 +47,7 @@ void InventoryManager::editItem(int index, QString type_name, int new_parametr) 
 
 }
 
+//------------------------------------------
 
 int InventoryManager::getSize() {
     return items.size();
@@ -57,6 +58,7 @@ GameItem* InventoryManager::getItem(int index) {
     return items[index].get();
 }
 
+//------------------------------------------
 
 bool InventoryManager::sortByName(std::unique_ptr<GameItem>& item1, std::unique_ptr<GameItem>& item2) {
     return item1->getName() < item2->getName();
@@ -102,6 +104,7 @@ bool InventoryManager::sortByDefense(std::unique_ptr<GameItem>& item1, std::uniq
     return armor2 != nullptr;
 }
 
+//------------------------------------------
 
 void InventoryManager::sort(QString SORT_TYPE) {
     bool (*func)(std::unique_ptr<GameItem>&, std::unique_ptr<GameItem>&) = nullptr;
@@ -134,3 +137,71 @@ void InventoryManager::sort(QString SORT_TYPE) {
         std::sort(items.begin(), items.end(), func);
 
 }
+
+//------------------------------------------
+
+std::vector<int> InventoryManager::searchItems(
+    bool checkDurability, int minDurability, int maxDurablity,
+    bool checkWeight, int minWeight, int maxWeight,
+    bool checkAttack, int minAttack, int maxAttack,
+    bool checkDefense, int minDefense, int maxDefense)
+{
+    std::vector<int> results;
+
+    bool matches; int attack, defense;
+    for (int i = 0; i < items.size(); i++) {
+        matches = true;
+
+        if (checkDurability and (items[i]->getDurability() < minDurability or items[i]->getDurability() > maxDurablity))
+            matches = false;
+
+        if (checkWeight and (items[i]->getWeight() < minWeight or items[i]->getWeight() > maxWeight))
+            matches = false;
+
+        if (checkAttack) {
+            attack = 0;
+            if (Weapon* weapon = dynamic_cast<Weapon*>(items[i].get()))
+                attack = weapon->getDamage();
+
+            if (attack < minAttack or attack > maxAttack)
+                matches = false;
+        }
+
+        if (checkDefense) {
+            defense = 0;
+            if (Armor* armor = dynamic_cast<Armor*>(items[i].get()))
+                defense = armor->getDefense();
+
+            if (defense < minDefense or defense > maxDefense)
+                matches = false;
+        }
+
+        if (matches)
+            results.push_back(i);
+    }
+
+    return results;
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
