@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>812</width>
-    <height>650</height>
+    <width>831</width>
+    <height>694</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -25,7 +25,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>811</width>
+      <width>831</width>
       <height>421</height>
      </rect>
     </property>
@@ -73,84 +73,13 @@
      </property>
     </column>
    </widget>
-   <widget class="QPushButton" name="pB_add">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>430</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>add</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pB_del">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>430</y>
-      <width>91</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>del</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pB_change">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>430</y>
-      <width>91</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>change</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="sB_del">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>430</y>
-      <width>91</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>100000</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="sB_change">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>430</y>
-      <width>91</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>100000</number>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>470</y>
-      <width>211</width>
-      <height>131</height>
+      <x>270</x>
+      <y>440</y>
+      <width>111</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="title">
@@ -162,8 +91,8 @@
     <widget class="QRadioButton" name="rB_name">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
+       <x>20</x>
+       <y>30</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -175,8 +104,8 @@
     <widget class="QRadioButton" name="rB_rarity">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>40</y>
+       <x>20</x>
+       <y>50</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -188,8 +117,8 @@
     <widget class="QRadioButton" name="rB_category">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>60</y>
+       <x>20</x>
+       <y>70</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -201,8 +130,8 @@
     <widget class="QRadioButton" name="rB_type">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>80</y>
+       <x>20</x>
+       <y>90</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -214,8 +143,8 @@
     <widget class="QRadioButton" name="rB_durability">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>20</y>
+       <x>20</x>
+       <y>110</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -227,8 +156,8 @@
     <widget class="QRadioButton" name="rB_weight">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>40</y>
+       <x>20</x>
+       <y>130</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -240,8 +169,8 @@
     <widget class="QRadioButton" name="rB_attack">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>60</y>
+       <x>20</x>
+       <y>150</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -253,8 +182,8 @@
     <widget class="QRadioButton" name="rB_defense">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>80</y>
+       <x>20</x>
+       <y>170</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -266,8 +195,8 @@
     <widget class="QRadioButton" name="rB_nothing">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>100</y>
+       <x>20</x>
+       <y>190</y>
        <width>91</width>
        <height>22</height>
       </rect>
@@ -286,112 +215,13 @@
     <zorder>rB_defense</zorder>
     <zorder>rB_nothing</zorder>
    </widget>
-   <widget class="QPushButton" name="pB_statistic">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>540</y>
-      <width>81</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Статистика</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="cB_characteristics_type">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>540</y>
-      <width>81</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>durability</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>weight</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>attack</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>defense</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="cB_statistic_type">
-    <property name="geometry">
-     <rect>
-      <x>680</x>
-      <y>540</y>
-      <width>111</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>Минимальное</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Максимальное</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Суммарное</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Среднее</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QPushButton" name="pB_open_searchdialog">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>490</y>
-      <width>111</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>open search dialog</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pB_clearHighlights">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>540</y>
-      <width>111</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>clear highlights</string>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>460</y>
-      <width>281</width>
-      <height>61</height>
+      <x>630</x>
+      <y>550</y>
+      <width>191</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="title">
@@ -404,13 +234,13 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>30</y>
-       <width>91</width>
+       <y>20</y>
+       <width>141</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
-      <string>сохранить</string>
+      <string>сохранить в файл</string>
      </property>
      <property name="autoExclusive">
       <bool>false</bool>
@@ -419,14 +249,14 @@
     <widget class="QRadioButton" name="rB_loadFromFile">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>30</y>
-       <width>51</width>
+       <x>10</x>
+       <y>50</y>
+       <width>121</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
-      <string>взять</string>
+      <string>взять из файла</string>
      </property>
      <property name="autoExclusive">
       <bool>false</bool>
@@ -435,18 +265,307 @@
     <widget class="QRadioButton" name="rB_changePath">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>30</y>
-       <width>101</width>
+       <x>10</x>
+       <y>80</y>
+       <width>141</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
-      <string>выбрать путь</string>
+      <string>выбрать путь файла</string>
      </property>
      <property name="autoExclusive">
       <bool>false</bool>
      </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>440</y>
+      <width>191</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Поиск элементов</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <widget class="QPushButton" name="pB_clearHighlights">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Очистить выделения</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pB_open_searchdialog">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Открыть окно поиска</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>251</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Управление набором данных</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <widget class="QLabel" name="label_index2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>160</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Индекс предмета</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pB_change">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Изменить предмет</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="sB_change">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>180</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>1000000</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pB_del">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Удалить предмет</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pB_add">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Добавить предмет</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_index1">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>90</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Индекс предмета</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="sB_del">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>110</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>1000000</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>440</y>
+      <width>231</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Сводная информация</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>90</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Тип поиска
+Найти * значение</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Тип характеристики</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cB_characteristics_type">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>40</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>durability</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>weight</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>attack</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>defense</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="pB_statistic">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>150</y>
+       <width>171</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Получить статистику</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cB_statistic_type">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>90</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Минимальное</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Максимальное</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Суммарное</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Среднее</string>
+      </property>
+     </item>
     </widget>
    </widget>
   </widget>
@@ -455,7 +574,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>812</width>
+     <width>831</width>
      <height>21</height>
     </rect>
    </property>

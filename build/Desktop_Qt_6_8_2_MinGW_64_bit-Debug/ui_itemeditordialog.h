@@ -54,10 +54,10 @@ public:
     {
         if (ItemEditorDialog->objectName().isEmpty())
             ItemEditorDialog->setObjectName("ItemEditorDialog");
-        ItemEditorDialog->resize(500, 538);
+        ItemEditorDialog->resize(356, 505);
         buttonBox = new QDialogButtonBox(ItemEditorDialog);
         buttonBox->setObjectName("buttonBox");
-        buttonBox->setGeometry(QRect(100, 480, 381, 41));
+        buttonBox->setGeometry(QRect(10, 460, 331, 41));
         QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

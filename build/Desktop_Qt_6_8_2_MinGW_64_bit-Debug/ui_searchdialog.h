@@ -96,13 +96,19 @@ public:
         spinBox_defense_2->setMaximum(100000);
         label = new QLabel(SearchDialog);
         label->setObjectName("label");
-        label->setGeometry(QRect(120, 20, 81, 21));
+        label->setGeometry(QRect(120, 10, 81, 31));
+        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label->setWordWrap(true);
         label_2 = new QLabel(SearchDialog);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(220, 20, 91, 21));
+        label_2->setGeometry(QRect(220, 10, 91, 31));
+        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_2->setWordWrap(true);
         label_3 = new QLabel(SearchDialog);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(20, 20, 91, 21));
+        label_3->setGeometry(QRect(20, 10, 91, 31));
+        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_3->setWordWrap(true);
 
         retranslateUi(SearchDialog);
         QObject::connect(buttonBox, &QDialogButtonBox::rejected, SearchDialog, qOverload<>(&QDialog::reject));
@@ -117,8 +123,8 @@ public:
         checkBox_weight->setText(QCoreApplication::translate("SearchDialog", "weight", nullptr));
         checkBox_attack->setText(QCoreApplication::translate("SearchDialog", "attack", nullptr));
         checkBox_defense->setText(QCoreApplication::translate("SearchDialog", "defense", nullptr));
-        label->setText(QCoreApplication::translate("SearchDialog", "\320\234\320\270\320\275\320\270\320\274\320\260\320\273\321\214\320\275\320\260\321\217", nullptr));
-        label_2->setText(QCoreApplication::translate("SearchDialog", "\320\234\320\260\320\272\321\201\320\270\320\274\320\260\320\273\321\214\320\275\320\260\321\217", nullptr));
+        label->setText(QCoreApplication::translate("SearchDialog", "\320\234\320\270\320\275\320\270\320\274\320\260\320\273\321\214\320\275\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260", nullptr));
+        label_2->setText(QCoreApplication::translate("SearchDialog", "\320\234\320\260\320\272\321\201\320\270\320\274\320\260\320\273\321\214\320\275\320\260\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260", nullptr));
         label_3->setText(QCoreApplication::translate("SearchDialog", "\320\245\320\260\321\200\320\260\320\272\321\202\320\265\321\200\320\270\321\201\321\202\320\270\320\272\320\260", nullptr));
     } // retranslateUi
 
